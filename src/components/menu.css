@@ -1,0 +1,8 @@
+.menu--main {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.menu--main > li {
+  padding: 0 5px;
+}
