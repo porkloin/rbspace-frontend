@@ -1,0 +1,19 @@
+.blog--teaser {
+  display: flex;
+}
+
+.blog--teaser-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 1em;
+}
+.blog--teaser-image > a > * {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+

@@ -14,22 +14,29 @@ const Blog = ( {data} ) => (
 export default Blog
 
 export const query = graphql`
-  query 
+  query
     {
       allNodeArticle {
         edges {
           node {
+            fields {
+              slug
+            }
             title
             created
             body {
               summary
               processed
             }
-            id
-            drupal_id
             relationships {
               field_image {
-                id
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 150, maxHeight: 150) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
               field_tags {
                 id
@@ -42,4 +49,4 @@ export const query = graphql`
         }
       }
     }
-`
+  `

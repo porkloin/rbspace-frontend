@@ -1,13 +1,20 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
+import Img from "gatsby-image"
 
-const BlogTeaser = ({ postTitle, postImage, postSummary, postLink }) => (
-  <article>
+import './BlogTeaser.css'
+
+const BlogTeaser = ({ postTitle, postImage, postSummary, postSlug }) => (
+  <article className="blog--teaser">
     <div className="blog--teaser-image">
-      <img src="http://via.placeholder.com/150" />
+      <Link to={postSlug}>
+        <Img fluid={postImage} />
+      </Link>
     </div>
     <div className="blog--teaser-text">
-      <h2>{postTitle}</h2>
+      <Link to={postSlug}>
+        <h2>{postTitle}</h2>
+      </Link>
       <p dangerouslySetInnerHTML={{__html: postSummary}}></p>
     </div>
   </article>

@@ -1,0 +1,11 @@
+.blog-roll {
+  display: flex;
+  flex-direction: column;
+}
+.blog-roll > * {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.blog--read-more {
+  text-align: right;
+}

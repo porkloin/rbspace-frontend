@@ -1,0 +1,32 @@
+.biographical {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.biographical > * {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.biographical ul {
+  margin: 0;
+}
+.biographical--links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+.biographical--links > * {
+  padding: 0 5px;
+}
+
+.biographical--links > *:after {
+  content: " | ";
+}
+
+.biographical--links > *:last-child:after {
+  content: "";
+}

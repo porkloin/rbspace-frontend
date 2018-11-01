@@ -1,7 +1,12 @@
 .menu--main {
-  display: flex;
+  display: none;
   align-items: center;
   margin-left: auto;
+}
+@media(min-width:768px) {
+  .menu--main {
+    display: flex;
+  }
 }
 .menu--main > li {
   padding: 0 5px;
