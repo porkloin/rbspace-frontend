@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from "prop-types"
 import { Link } from 'gatsby'
 import { connect } from 'react-redux'
-import Menu from './Menu'
+import Menu from './menu'
 import Hamburger from './hamburger'
 import logo from '../images/logo.svg'
 import './header.css'
