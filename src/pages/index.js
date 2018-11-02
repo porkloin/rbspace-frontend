@@ -22,7 +22,7 @@ const IndexPage = ( {data} ) => (
     />
     <h2>About Me</h2>
     <p>I am a web developer and internet person currently working with <a href="http://www.hook42.com">Hook 42.</a> I primarily occupy meatspace in Fairbanks, Alaska.</p>
-    <p>Things I like: bicycling, computers, video games, and ice fishing.</p>
+    <p style={{ marginBottom: '1.45rem'}}>Things I like: bicycling, computers, video games, and ice fishing.</p>
     <h2>Blog</h2>
     <BlogRoll blogs={data.allNodeArticle.edges} readMore={true} />
   </Layout>

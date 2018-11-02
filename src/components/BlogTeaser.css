@@ -1,5 +1,6 @@
 .blog--teaser {
   display: flex;
+  flex-direction: column;
 }
 
 .blog--teaser-image {
@@ -17,3 +18,8 @@
   border-radius: 50%;
 }
 
+@media(min-width:768px) {
+  .blog--teaser {
+    flex-direction: row;
+  }
+}
