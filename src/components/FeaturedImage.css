@@ -8,9 +8,13 @@
   margin-bottom: 1.5em;
 }
 
-.featured-image > * {
+.featured-image > *, .featured-image > * img {
   width: 200px;
   height: 200px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
 }
 

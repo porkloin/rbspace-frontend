@@ -16,6 +16,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.blog--teaser-image > a img {
+  -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
 }
 
