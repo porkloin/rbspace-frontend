@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   padding-right: 1em;
+  margin-bottom: 1em;
 }
 .blog--teaser-image > a > * {
   width: 100px;
