@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import BlogRoll from '../components/BlogRoll'
@@ -16,7 +15,7 @@ export default Blog
 export const query = graphql`
   query
     {
-      allNodeArticle {
+      allNodeArticle(sort: { fields: created, order: DESC}) {
         edges {
           node {
             fields {

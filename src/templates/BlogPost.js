@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 import moment from 'moment'
 import React from "react"
-import Img from "gatsby-image"
+import FeaturedImage from '../components/FeaturedImage'
 
 import Layout from "../components/layout"
 
@@ -10,6 +10,7 @@ const BlogPost = ({ data }) => (
     <article>
       <h1>{data.nodeArticle.title}</h1>
       <i><p className="publication-date">{moment.unix(data.nodeArticle.created).format('DD MMMM, YYYY - h:mm A')}</p></i>
+      <FeaturedImage imgFluid={data.nodeArticle.relationships.field_image ? data.nodeArticle.relationships.field_image.localFile.childImageSharp.fluid : null} />
       <span dangerouslySetInnerHTML={{__html: data.nodeArticle.body.processed}}></span>
     </article>
   </Layout>
@@ -29,7 +30,7 @@ export const query = graphql`
         field_image {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 470, maxHeight: 353) {
+              fluid(maxWidth: 300, maxHeight: 300) {
                 ...GatsbyImageSharpFluid
               }
             }

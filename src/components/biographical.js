@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import './biographical.css'
 
@@ -20,8 +20,11 @@ const Biographical = ( { links } ) => (
       <div className="biographical">
         <Img className="biographical--image circle" fluid={data.placeholderImage.childImageSharp.fluid} />
         <ul className="biographical--links">
-          <li>github</li>
-          <li>twitter</li>
+          { links.map((link, i) => (
+            i < links.length - 1 ? <><li><a href={link.href}>{link.text}</a></li><li> | </li></>
+              : <li><a href={link.href}>{link.text}</a></li>
+          )
+          )}
         </ul>
       </div>
     )}

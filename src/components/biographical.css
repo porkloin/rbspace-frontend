@@ -20,13 +20,13 @@
 }
 
 .biographical--links > * {
-  padding: 0 5px;
+  margin: 0 5px;
 }
 
-.biographical--links > *:after {
+biographical--links > li:after {
   content: " | ";
 }
 
-.biographical--links > *:last-child:after {
+.biographical--links > li:last-child:after {
   content: "";
 }

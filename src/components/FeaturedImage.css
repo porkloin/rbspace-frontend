@@ -1,0 +1,17 @@
+.featured-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.featured-image > * {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+

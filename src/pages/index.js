@@ -1,16 +1,27 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import Biographical from '../components/biographical'
 import BlogRoll from '../components/BlogRoll'
-import Image from '../components/image'
 
 const IndexPage = ( {data} ) => (
   <Layout>
-    <Biographical />
+    <Biographical
+      links={
+        [
+          {
+            'href': 'http://www.github.com/porkloin',
+            'text': 'github',
+          },
+          {
+            'href': 'http://www.twitter.com/_porkloin_',
+            'text': 'twitter',
+          },
+        ]
+      }
+    />
     <h2>About Me</h2>
-    <p>I am a web developer and internet person currently working with <a href="www.hook42.com">Hook 42.</a> I primarily occupy meatspace in Fairbanks, Alaska.</p>
+    <p>I am a web developer and internet person currently working with <a href="http://www.hook42.com">Hook 42.</a> I primarily occupy meatspace in Fairbanks, Alaska.</p>
     <p>Things I like: bicycling, computers, video games, and ice fishing.</p>
     <h2>Blog</h2>
     <BlogRoll blogs={data.allNodeArticle.edges} readMore={true} />

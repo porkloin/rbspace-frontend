@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import logo from '../images/logo.svg'
 import './menu.css'
 
 
-const Menu = ({ menuLinks }) => (
-  <nav className="menu--main">
+const Menu = ({ menuLinks, menuIsClosed }) => (
+  <nav className={menuIsClosed ? "menu--main closed" : "menu--main open"}>
     {
       menuLinks.map(link =>
         <li key={link.link} style={{ 'listStyleType': 'none'}}>

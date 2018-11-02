@@ -8,7 +8,7 @@ import './BlogRoll.css'
 const BlogRoll = ( {blogs, readMore} ) => (
   <StaticQuery
     query={graphql`
-      query HeadingQuery {
+      query {
         fileName: file(relativePath: { eq: "code.png" }) {
           childImageSharp {
             fluid(maxWidth: 150, maxHeight: 150) {
@@ -36,11 +36,3 @@ const BlogRoll = ( {blogs, readMore} ) => (
 )
 
 export default BlogRoll
-
-export const query = graphql`
-  query {
-    fileName: file(relativePath: { eq: "code.png" }) {
-      extension
-    }
-  }
-`
