@@ -60,7 +60,7 @@ const Header = ({ siteTitle, siteTagline, menuLinks, menuToggle, menuIsClosed, t
         className="menu--main--toggle"
         onClick={menuToggle}
       >
-        <Hamburger isActive={!menuIsClosed}  />
+        <Hamburger isActive={!menuIsClosed} theme={theme} />
       </div>
     </div>
     <div
@@ -74,7 +74,7 @@ const Header = ({ siteTitle, siteTagline, menuLinks, menuToggle, menuIsClosed, t
       }}
     >
       <div className="menu--mobile">
-        <Menu menuIsClosed={menuIsClosed} menuLinks={menuLinks}  />
+        <Menu menuIsClosed={menuIsClosed} menuLinks={menuLinks} theme={theme} />
       </div>
     </div>
   </header>

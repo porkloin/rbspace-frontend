@@ -29,3 +29,26 @@
   transform: rotate(45deg);
   margin-top: 5px;
 }
+
+.theme-switcher--tooltip {
+  display: none;
+  font-size: .5em;
+  padding: 1em;
+  position: absolute;
+  right: 70px;
+  white-space: nowrap;
+}
+.theme-switcher--tooltip-arrow {
+  display: none;
+  position: absolute;
+  right: 60px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+.theme-switcher:hover .theme-switcher--tooltip,
+.theme-switcher:hover .theme-switcher--tooltip-arrow {
+  display: block;
+}
