@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql, Link } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import './biographical.css'
 

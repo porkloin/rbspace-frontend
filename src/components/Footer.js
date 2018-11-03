@@ -9,6 +9,7 @@ const Footer = () => (
         maxWidth: 960,
         padding: '1.45rem 1.0875rem',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center'
       }}
@@ -19,10 +20,13 @@ const Footer = () => (
           borderTop: '1px solid #666',
           textAlign: 'center',
           marginBottom: '0',
-          fontSize: '.75em'
+          fontSize: '.75em',
+          width: '100%',
         }}
       >
-        Built with <a href="http://gatsbyjs.org/">Gatsby</a> in front and <a href="https://www.drupal.org/8">Drupal 8</a> in the back.
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+        <br /> <br />
+        Built with <a href="http://gatsbyjs.org/">Gatsby</a> in the front and <a href="https://www.drupal.org/8">Drupal 8</a> in the back.
       </p>
     </div>
   </footer>

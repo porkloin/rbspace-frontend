@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "Ryan Bateman",
+  "description": "Ryan Bateman Blog Front-End",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ryan Bateman <rybateman@gmail.com>",
   "dependencies": {
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",

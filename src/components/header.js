@@ -8,7 +8,7 @@ import logo from '../images/logo.svg'
 import './header.css'
 
 
-const Header = ({ siteTitle, siteTagline, menuLinks, menuToggle, menuIsClosed }) => (
+const Header = ({ siteTitle, siteTagline, menuLinks, menuToggle, menuIsClosed, theme }) => (
   <header>
     <div
       style={{
@@ -33,7 +33,7 @@ const Header = ({ siteTitle, siteTagline, menuLinks, menuToggle, menuIsClosed })
       <Link
         to="/"
         style={{
-          color: 'black',
+          color: theme === 'light' ? '#000' : '#fff',
           textDecoration: 'none',
           textTransform: 'uppercase',
           fontSize: '1em',
@@ -45,7 +45,7 @@ const Header = ({ siteTitle, siteTagline, menuLinks, menuToggle, menuIsClosed })
           className="site-slogan"
           style={{
             fontWeight: '300',
-            color: '#555',
+            color: theme === 'light' ? '#555' : '#fff',
             textTransform: 'capitalize',
             paddingLeft: '10px',
           }}
@@ -54,7 +54,7 @@ const Header = ({ siteTitle, siteTagline, menuLinks, menuToggle, menuIsClosed })
         </span>
       </Link>
       <div className="menu--desktop">
-        <Menu menuLinks={menuLinks} />
+        <Menu menuLinks={menuLinks} theme={theme} />
       </div>
       <div
         className="menu--main--toggle"

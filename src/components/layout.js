@@ -2,12 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { connect } from 'react-redux'
 
 import Header from './header'
 import Footer from './Footer'
+import ThemeSwitcher from './ThemeSwitcher'
 import './layout.css'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, themeToggle, theme }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -24,12 +26,18 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <div
+        style={{
+            background: theme === 'light' ? '#fff' : '#111',
+            color: theme === 'light' ? '#000' : '#fff',
+        }}
+      >
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
             { name: 'description', content: 'Ryan Bateman is a full stack web developer occupying meatspace in Fairbanks, Alaska.' },
             { name: 'keywords', content: 'web development, drupal, react, reactjs, javascript' },
+            { name: 'application-name', content: 'Ryan Bateman' },
           ]}
         >
           <html lang="en" />
@@ -39,6 +47,7 @@ const Layout = ({ children }) => (
         siteTagline={data.site.siteMetadata.tagline}
         siteLogo={'/'}
         menuLinks={data.site.siteMetadata.menuLinks}
+        theme={theme}
       />
         <div
           style={{
@@ -51,13 +60,29 @@ const Layout = ({ children }) => (
           {children}
         </div>
       <Footer />
-      </>
+      <ThemeSwitcher themeToggle={themeToggle} theme={theme} />
+      </div>
     )}
   />
 )
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  theme: PropTypes.string.isRequired,
+  themeToggle: PropTypes.func.isRequired,
 }
 
-export default Layout
+const mapStateToProps = ({ theme }) => {
+  return { theme }
+}
+
+const mapDispatchToProps = dispatch => {
+  return { themeToggle: () => dispatch({ type: `THEME_TOGGLE` }) }
+}
+
+const ConnectedLayout = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Layout)
+
+export default ConnectedLayout

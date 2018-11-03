@@ -20,11 +20,17 @@
   padding: 0 1.25em;
 }
 
-.menu--main > li > a {
+.menu--main.light > li > a {
   color: black;
-  text-decoration: none;
 }
 
+.menu--main.dark > li > a {
+  color: white;
+}
+
+.menu--main > li > a {
+  text-decoration: none;
+}
 .menu--main > li > a:hover {
   text-decoration: underline;
 }
