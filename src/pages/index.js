@@ -5,7 +5,7 @@ import Biographical from '../components/biographical'
 import BlogRoll from '../components/BlogRoll'
 
 const IndexPage = ( {data} ) => (
-  <Layout>
+  <Layout pageTitle='Home'>
     <Biographical
       links={
         [

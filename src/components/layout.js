@@ -18,7 +18,7 @@ const darkCss = `
 `
 
 
-const Layout = ({ children, themeToggle, theme }) => (
+const Layout = ({ children, themeToggle, theme, pageTitle }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -42,7 +42,7 @@ const Layout = ({ children, themeToggle, theme }) => (
         }}
       >
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={pageTitle + ' | ' + data.site.siteMetadata.title}
           meta={[
             { name: 'description', content: 'Ryan Bateman is a full stack web developer occupying meatspace in Fairbanks, Alaska.' },
             { name: 'keywords', content: 'web development, drupal, react, reactjs, javascript' },

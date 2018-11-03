@@ -6,7 +6,7 @@ import FeaturedImage from '../components/FeaturedImage'
 import Layout from "../components/layout"
 
 const BlogPost = ({ data }) => (
-  <Layout>
+  <Layout pageTitle={data.nodeArticle.title}>
     <article>
       <h1>{data.nodeArticle.title}</h1>
       <i><p className="publication-date">{moment.unix(data.nodeArticle.created).format('DD MMMM, YYYY - h:mm A')}</p></i>
