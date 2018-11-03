@@ -1,5 +1,11 @@
 # Ryan Bateman Dot Space Front-End
 
+[![CircleCI](https://circleci.com/gh/porkloin/rbspace-backend.svg?style=shield)](https://circleci.com/gh/porkloin/rbspace-backend)
+[![Dashboard rbspace-backend](https://img.shields.io/badge/dashboard-rbspace_backend-yellow.svg)](https://dashboard.pantheon.io/sites/599d51e8-07e0-4a90-b7ed-f88f1f66b635#dev/code)
+[![Dev Site rbspace-backend](https://img.shields.io/badge/site-rbspace_backend-blue.svg)](http://dev-rbspace-backend.pantheonsite.io/)
+[![Gatsby Front-End Site rbspace-frontend](https://img.shields.io/badge/site-rbspace_frontend-red.svg)](http://www.ryanbateman.space/)
+[![Front-End Repo](https://img.shields.io/badge/site-Front_End_Repo-orange.svg)](http://www.github.com/porkloin/rbspace-frontend)
+
 This is the front-end repository for my personal blog, [Ryan Bateman Dot Space](http://www.ryanbateman.space). It is built using [Gatsby](http://www.gatsbyjs.org), and pulls from my [Drupal 8 backend](http://www.github.com/porkloin/rbspace-backend) for content to automatically generate new static site builds on [Netlify](https://www.netlify.com/) whenever pages are created, updated, or deleted.
 
 ## Original Gatsby README:
