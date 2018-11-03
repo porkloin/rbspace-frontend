@@ -44,6 +44,10 @@
   transition: visibility 0s, opacity 0.5s;
 }
 
+.menu--mobile > .menu--main li {
+  margin-bottom: .725rem;
+}
+
 @media(min-width:768px) {
   .menu--mobile , .menu--mobile--container{
     display: none;
