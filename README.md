@@ -1,17 +1,10 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# Ryan Bateman Dot Space Front-End
 
-Kick off your project with this default boilerplate. This barebones starter ships with the main Gatsby configuration files you might need. 
+This is the front-end repository for my personal blog, [Ryan Bateman Dot Space](http://www.ryanbateman.space). It is built using [Gatsby](http://www.gatsbyjs.org), and pulls from my [Drupal 8 backend](http://www.github.com/porkloin/rbspace-backend) for content to automatically generate new static site builds on [Netlify](https://www.netlify.com/) whenever pages are created, updated, or deleted.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## Original Gatsby README:
 
-## 🚀 Quick start
+### 🚀 Quick start
 
 1.  **Install the Gatsby CLI.**
 
@@ -48,7 +41,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     
     Open the the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
     
-## 🧐 What's inside?
+### 🧐 What's inside?
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.
 
@@ -100,7 +93,3 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 -   **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
 -   **To dive straight into code samples head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the “Guides”, API reference, and “Advanced Tutorials” sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
