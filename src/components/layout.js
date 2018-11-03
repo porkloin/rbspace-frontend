@@ -48,6 +48,7 @@ const Layout = ({ children, themeToggle, theme }) => (
             { name: 'keywords', content: 'web development, drupal, react, reactjs, javascript' },
             { name: 'application-name', content: 'Ryan Bateman' },
             { name: 'theme-color', content: theme === 'light' ? '#fff' : '#111' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1.0, viewport-fit=cover' },
           ]}
         >
           <html lang="en" />
