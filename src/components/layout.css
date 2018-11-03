@@ -645,3 +645,7 @@ pre tt:after {
   display: flex;
   alignItems: center;
 }
+
+.align-center {
+  text-align: center;
+}

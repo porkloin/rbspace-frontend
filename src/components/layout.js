@@ -18,7 +18,7 @@ const darkCss = `
 `
 
 
-const Layout = ({ children, themeToggle, theme, pageTitle }) => (
+const Layout = ({ children, themeToggle, theme, pageTitle, pageDescription }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -44,7 +44,7 @@ const Layout = ({ children, themeToggle, theme, pageTitle }) => (
         <Helmet
           title={pageTitle + ' | ' + data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Ryan Bateman is a full stack web developer occupying meatspace in Fairbanks, Alaska.' },
+            { name: 'description', content: pageDescription ?  pageDescription : 'Ryan Bateman is a full stack web developer occupying meatspace in Fairbanks, Alaska.' },
             { name: 'keywords', content: 'web development, drupal, react, reactjs, javascript' },
             { name: 'application-name', content: 'Ryan Bateman' },
             { name: 'theme-color', content: theme === 'light' ? '#fff' : '#111' },

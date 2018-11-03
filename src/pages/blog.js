@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import BlogRoll from '../components/BlogRoll'
 
 const Blog = ( {data} ) => (
-  <Layout pageTitle='Blog'>
+  <Layout pageTitle='Blog' pageDescription='The personal blog of Ryan Bateman. Pls read, ventertaining.'>
     <h1>Blog</h1>
     <BlogRoll blogs={data.allNodeArticle.edges} />
   </Layout>
