@@ -14,7 +14,7 @@ const Header = ({ siteTitle, siteTagline, menuLinks, menuToggle, menuIsClosed, t
       style={{
         margin: '0 auto',
         maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
+        padding: '1rem 1.0875rem',
         display: 'flex',
         alignItems: 'center'
       }}
@@ -69,7 +69,7 @@ const Header = ({ siteTitle, siteTagline, menuLinks, menuToggle, menuIsClosed, t
         display: menuIsClosed ? 'none' : 'flex',
         margin: '0 auto',
         maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
+        padding: '1rem 1.0875rem',
         alignItems: 'center'
       }}
     >
