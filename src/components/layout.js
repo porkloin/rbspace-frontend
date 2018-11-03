@@ -9,6 +9,14 @@ import Footer from './Footer'
 import ThemeSwitcher from './ThemeSwitcher'
 import './layout.css'
 
+let theme = mapStateToProps
+if (theme === 'light') {
+  require('./layout-light.css')
+}
+else if (theme === 'dark') {
+  require('./layout-dark.css')
+}
+
 const Layout = ({ children, themeToggle, theme }) => (
   <StaticQuery
     query={graphql`
