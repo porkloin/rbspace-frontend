@@ -38,6 +38,7 @@ const Layout = ({ children, themeToggle, theme }) => (
             { name: 'description', content: 'Ryan Bateman is a full stack web developer occupying meatspace in Fairbanks, Alaska.' },
             { name: 'keywords', content: 'web development, drupal, react, reactjs, javascript' },
             { name: 'application-name', content: 'Ryan Bateman' },
+            { name: 'theme-color', content: theme === 'light' ? '#fff' : '#111' },
           ]}
         >
           <html lang="en" />

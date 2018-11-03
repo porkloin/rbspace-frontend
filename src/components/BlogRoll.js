@@ -22,6 +22,7 @@ const BlogRoll = ( {blogs, readMore} ) => (
     <div className="blog-roll">
       {blogs.map((blog) => (
         <BlogTeaser
+          key={blog.node.fields.slug}
           data={data}
           postTitle={blog.node.title}
           postSummary={blog.node.body.summary.length > 0 ? blog.node.body.summary : blog.node.body.processed.substring(0,200) + '...' }
