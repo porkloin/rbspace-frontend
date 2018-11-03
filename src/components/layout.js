@@ -9,13 +9,14 @@ import Footer from './Footer'
 import ThemeSwitcher from './ThemeSwitcher'
 import './layout.css'
 
-let theme = mapStateToProps
-if (theme === 'light') {
-  require('./layout-light.css')
-}
-else if (theme === 'dark') {
-  require('./layout-dark.css')
-}
+const lightCss = `
+  html, body { background: #fff; }
+`
+
+const darkCss = `
+  html, body { background: #111; }
+`
+
 
 const Layout = ({ children, themeToggle, theme }) => (
   <StaticQuery
@@ -50,6 +51,7 @@ const Layout = ({ children, themeToggle, theme }) => (
           ]}
         >
           <html lang="en" />
+          <style>{ theme === 'light' ? lightCss : darkCss }</style>
         </Helmet>
       <Header
         siteTitle={data.site.siteMetadata.title}
