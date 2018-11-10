@@ -1,0 +1,32 @@
+.guest-book {
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #555;
+  padding: 15px;
+}
+.guest-book-log {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  flex-basis: 250px;
+}
+
+.emoji-mart {
+  width: 100%!important;
+  min-height: 150px;
+  flex-basis: 250px;
+  flex-shrink: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.emoji-mart-scroll {
+
+}
+
+.emoji-mart-bar {
+	display: none;
+}

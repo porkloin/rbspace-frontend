@@ -1,51 +1,83 @@
 import React, {Component} from 'react'
-import EmojiPicker from 'emoji-picker-react';
+import io from 'socket.io-client';
+import uuidv1 from 'uuid/v1';
+import { animateScroll } from "react-scroll";
+import { Picker } from 'emoji-mart';
+import { geolocated } from 'react-geolocated';
+import openGeocoder from 'node-open-geocoder';
 
 import GuestBookMessage from './GuestBookMessage'
+import 'emoji-mart/css/emoji-mart.css'
+import './GuestBookLog.css';
 
 
 class GuestBookLog extends Component {
   constructor(props) {
     super(props);
-    this.state = { inputValue: '' };
+    this.socket = io(process.env.SOCKET_IO_URL);
+    this.state = {
+      messages: [],
+    };
+    this.scrollToBottom = this.scrollToBottom.bind(this);
     this.handleEmojiClick = this.handleEmojiClick.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  scrollToBottom() {
+    animateScroll.scrollToBottom({
+      containerId: "guest-book-log"
+    });
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000")
-      .then(response => response.json())
-      .then(data => this.props.setMessages(data))
-      .catch(err => console.log(err));
-  }
-
-  handleInputChange(event) {
-    this.setState({
-      inputValue: event.target.value,
+    this.socket.on('init', (data) => {
+      this.setState({ messages: data });
+      this.scrollToBottom();
+    });
+    this.socket.on('message', (data) => {
+      let newMessages = [...this.state.messages];
+      newMessages.push(data);
+      this.setState({ messages: newMessages })
+      this.scrollToBottom();
     });
   }
-  handleSubmit(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    this.props.sendMessage({ message: this.state.inputValue });
-  }
-  handleEmojiClick(code, emoji) {
-    this.props.sendMessage({'message': ':' + emoji.name + ':'});
+
+	componentDidUpdate() {
+		if (this.props.isGeolocationEnabled && this.props.coords && !this.state.location) {
+			let generalLocation;
+			openGeocoder()
+				.reverse(
+					this.props.coords.longitude,
+					this.props.coords.latitude)
+				.end((err, res) => { this.setState({ location: res.address.county }) });
+		}
+	}
+
+  handleEmojiClick(emoji) {
+    this.socket.emit('message', JSON.stringify(
+			{
+				message: emoji.id,
+				location: this.state.location ? this.state.location : 'Somewhere in space...'
+			}
+		));
   }
   render() {
     return (
-      <div
-        className="guest-book-log"
-      >
-        {this.props.messages.length > 0 ? this.props.messages.map((message) => <GuestBookMessage key={message} message={message} />) : 'No messages found. Sad!' }
-        <EmojiPicker onEmojiClick={this.handleEmojiClick} />
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" name="message" value={this.state.inputValue} onChange={this.handleInputChange} />
-        </form>
+      <div className="guest-book">
+        <div
+          id="guest-book-log"
+          className="guest-book-log"
+        >
+          {this.state.messages.length > 0 ? this.state.messages.map((message) => <GuestBookMessage key={uuidv1()} message={message} />) : 'Loading...' }
+        </div>
+        <Picker onSelect={this.handleEmojiClick} />
       </div>
     )
   }
 }
 
-export default GuestBookLog
+export default geolocated({
+  positionOptions: {
+      enableHighAccuracy: false,
+	},
+	userDecisionTimeout: 5000,
+})(GuestBookLog);

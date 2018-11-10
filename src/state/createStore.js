@@ -11,16 +11,6 @@ const reducer = (state, action) => {
       theme: state.theme === 'light' ? 'dark' : 'light',
     })
   }
-  if (action.type === `SEND_MESSAGE`) {
-    return Object.assign({}, state, {
-      messages: [...state.messages, action.payload],
-    })
-  }
-  if (action.type === `SET_MESSAGES`) {
-    return Object.assign({}, state, {
-      messages: action.payload,
-    })
-  }
   return state
 }
 
@@ -28,7 +18,6 @@ const reducer = (state, action) => {
 const initialState = {
   menuIsClosed: true,
   theme: 'light',
-  messages: [],
 }
 
 const createStore = () => reduxCreateStore(reducer, initialState)
