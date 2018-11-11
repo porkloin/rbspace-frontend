@@ -14,7 +14,6 @@ import './GuestBookLog.css';
 class GuestBookLog extends Component {
   constructor(props) {
     super(props);
-    this.socket = io(process.env.SOCKET_IO_URL);
     this.state = {
       messages: [],
     };
@@ -29,6 +28,7 @@ class GuestBookLog extends Component {
   }
 
   componentDidMount() {
+    this.socket = io(process.env.SOCKET_IO_URL);
     this.socket.on('init', (data) => {
       this.setState({ messages: data });
       this.scrollToBottom();
