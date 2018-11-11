@@ -28,7 +28,7 @@ class GuestBookLog extends Component {
   }
 
   componentDidMount() {
-    this.socket = io(process.env.GATSBY_SOCKET_IO_URL);
+    this.socket = io(process.env.GATSBY_SOCKET_IO_URL, { secure: true });
     this.socket.on('init', (data) => {
       this.setState({ messages: data });
       this.scrollToBottom();
