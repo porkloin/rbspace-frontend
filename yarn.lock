@@ -1390,6 +1390,10 @@ array-unique@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/array-unique/-/array-unique-0.3.2.tgz#a894b75d4bc4f6cd679ef3244a9fd8f46ae2d428"
 
+array.some@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/array.some/-/array.some-1.0.0.tgz#2afde060ac7c921829ae11237247023f57485d94"
+
 arraybuffer.slice@~0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/arraybuffer.slice/-/arraybuffer.slice-0.0.7.tgz#3bbc4275dd584cc1b10809b89d4e8b63a69e7675"
@@ -1884,7 +1888,7 @@ babel-preset-fbjs@^2.1.4:
     babel-plugin-transform-react-display-name "^6.8.0"
     babel-plugin-transform-react-jsx "^6.8.0"
 
-babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
+babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.25.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -2003,6 +2007,10 @@ better-queue@^3.8.6, better-queue@^3.8.7:
     better-queue-memory "^1.0.1"
     node-eta "^0.9.0"
     uuid "^3.0.0"
+
+between-range@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/between-range/-/between-range-1.0.0.tgz#aab7c2f46ef87a3b4ba9a7611724d9b813e7e149"
 
 big.js@^3.1.3:
   version "3.2.0"
@@ -3771,6 +3779,17 @@ elliptic@^6.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
+emoji-mart@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/emoji-mart/-/emoji-mart-2.8.1.tgz#4ffcb807237989a953085c80a6553d21f1effc62"
+
+emoji-picker-react@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/emoji-picker-react/-/emoji-picker-react-2.1.1.tgz#d833635c8c18dfac5dbe53b0eadd62f630d6273e"
+  dependencies:
+    babel-runtime "^6.25.0"
+    throttle-debounce "^1.0.1"
+
 emoji-regex@^6.5.1:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-6.5.1.tgz#9baea929b155565c11ea41c6626eaa65cef992c2"
@@ -5117,6 +5136,13 @@ get-port@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/get-port/-/get-port-3.2.0.tgz#dd7ce7de187c06c8bf353796ac71e099f0980ebc"
 
+get-property-value@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/get-property-value/-/get-property-value-2.0.0.tgz#0dceaecf0c8fc5ce01452737d64281d432bbd956"
+  dependencies:
+    array.some "^1.0.0"
+    is.object "^1.0.0"
+
 get-proxy@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/get-proxy/-/get-proxy-1.1.0.tgz#894854491bc591b0f147d7ae570f5c678b7256eb"
@@ -6333,6 +6359,12 @@ is-utf8@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
 
+is-valid-coordinates@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-valid-coordinates/-/is-valid-coordinates-1.0.0.tgz#ac26e968be78f73903e26fbe990808e8a5015310"
+  dependencies:
+    between-range "^1.0.0"
+
 is-valid-glob@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/is-valid-glob/-/is-valid-glob-0.3.0.tgz#d4b55c69f51886f9b65c70d6c2622d37e29f48fe"
@@ -6348,6 +6380,10 @@ is-wsl@^1.1.0:
 is-zip@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-zip/-/is-zip-1.0.0.tgz#47b0a8ff4d38a76431ccfd99a8e15a4c86ba2325"
+
+is.object@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is.object/-/is.object-1.0.0.tgz#e4f4117e9f083b35c8df5cf817ea3efb0452fdfa"
 
 isarray@0.0.1:
   version "0.0.1"
@@ -6517,6 +6553,10 @@ json-loader@^0.5.7:
 json-parse-better-errors@^1.0.1, json-parse-better-errors@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/json-parse-better-errors/-/json-parse-better-errors-1.0.2.tgz#bb867cfb3450e69107c131d1c514bab3dc8bcaa9"
+
+json-parse-safe@^1.0.3:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/json-parse-safe/-/json-parse-safe-1.0.5.tgz#fc18258806ed2e286151ca815eac4c633d219ed6"
 
 json-schema-traverse@^0.3.0:
   version "0.3.1"
@@ -6887,6 +6927,10 @@ lodash.templatesettings@^4.0.0:
   resolved "https://registry.yarnpkg.com/lodash.templatesettings/-/lodash.templatesettings-4.1.0.tgz#2b4d4e95ba440d915ff08bc899e4553666713316"
   dependencies:
     lodash._reinterpolate "~3.0.0"
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
 
 lodash.toarray@^4.4.0:
   version "4.4.0"
@@ -7422,6 +7466,16 @@ node-libs-browser@^2.0.0:
     url "^0.11.0"
     util "^0.10.3"
     vm-browserify "0.0.4"
+
+node-open-geocoder@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/node-open-geocoder/-/node-open-geocoder-2.1.0.tgz#646248fc160acce0d9d9b698714e36688616eb27"
+  dependencies:
+    get-property-value "^2.0.0"
+    is-valid-coordinates "^1.0.0"
+    is.object "^1.0.0"
+    json-parse-safe "^1.0.3"
+    qs "^6.4.0"
 
 node-pre-gyp@^0.10.0:
   version "0.10.3"
@@ -8532,7 +8586,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -8618,7 +8672,7 @@ q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
 
-qs@6.5.2, qs@~6.5.2:
+qs@6.5.2, qs@^6.4.0, qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
@@ -8726,6 +8780,12 @@ react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
 
+react-geolocated@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/react-geolocated/-/react-geolocated-2.4.0.tgz#36287997574a12bdccc01381abfe6c4d191b0ecf"
+  dependencies:
+    prop-types "^15.5.8"
+
 react-helmet@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.2.0.tgz#a81811df21313a6d55c5f058c4aeba5d6f3d97a7"
@@ -8788,6 +8848,13 @@ react-router@^4.3.1:
     path-to-regexp "^1.7.0"
     prop-types "^15.6.1"
     warning "^4.0.1"
+
+react-scroll@^1.7.10:
+  version "1.7.10"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.7.10.tgz#b59cfa11a899a362c6489607ed5865c9c5fd0b53"
+  dependencies:
+    lodash.throttle "^4.1.1"
+    prop-types "^15.5.8"
 
 react-side-effect@^1.1.0:
   version "1.1.5"
@@ -9563,7 +9630,7 @@ socket.io-adapter@~1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/socket.io-adapter/-/socket.io-adapter-1.1.1.tgz#2a805e8a14d6372124dd9159ad4502f8cb07f06b"
 
-socket.io-client@2.1.1:
+socket.io-client@2.1.1, socket.io-client@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/socket.io-client/-/socket.io-client-2.1.1.tgz#dcb38103436ab4578ddb026638ae2f21b623671f"
   dependencies:
@@ -10143,6 +10210,10 @@ terser@^3.8.1:
 text-table@0.2.0, text-table@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
+
+throttle-debounce@^1.0.1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-1.1.0.tgz#51853da37be68a155cb6e827b3514a3c422e89cd"
 
 throttleit@^1.0.0:
   version "1.0.0"

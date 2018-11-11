@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "author": "Ryan Bateman <rybateman@gmail.com>",
   "dependencies": {
+    "emoji-mart": "^2.8.1",
+    "emoji-picker-react": "^2.1.1",
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-favicon": "^3.1.4",
@@ -15,14 +17,19 @@
     "gatsby-source-filesystem": "^2.0.4",
     "gatsby-transformer-sharp": "^2.1.4",
     "moment": "^2.22.2",
+    "node-open-geocoder": "^2.1.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-geolocated": "^2.4.0",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.1.0",
     "react-router-dom": "^4.3.1",
+    "react-scroll": "^1.7.10",
     "redux": "^4.0.1",
     "redux-devtools": "^3.4.1",
-    "transliteration": "^1.6.6"
+    "socket.io-client": "^2.1.1",
+    "transliteration": "^1.6.6",
+    "uuid": "^3.3.2"
   },
   "keywords": [
     "gatsby"

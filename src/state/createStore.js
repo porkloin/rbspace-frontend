@@ -14,6 +14,7 @@ const reducer = (state, action) => {
   return state
 }
 
+
 const initialState = {
   menuIsClosed: true,
   theme: 'light',
