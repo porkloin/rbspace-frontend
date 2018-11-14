@@ -44,7 +44,7 @@ class GuestBookLog extends Component {
 	componentDidUpdate() {
 		if (this.props.isGeolocationEnabled && this.props.coords && !this.state.location) {
 			let generalLocation;
-			openGeocoder()
+			openGeocoder({port: 443})
 				.reverse(
 					this.props.coords.longitude,
 					this.props.coords.latitude)
