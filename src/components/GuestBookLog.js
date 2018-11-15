@@ -43,12 +43,27 @@ class GuestBookLog extends Component {
 
 	componentDidUpdate() {
 		if (this.props.isGeolocationEnabled && this.props.coords && !this.state.location) {
-			let generalLocation;
-			openGeocoder({port: 443})
-				.reverse(
-					this.props.coords.longitude,
-					this.props.coords.latitude)
-				.end((err, res) => { this.setState({ location: res.address.county }) });
+      let baseurl = 'https://nominatim.openstreetmap.org/reverse?format=json&lat=';
+      let nominatimurl = baseurl +  this.props.coords.latitude +'&lon=' + this.props.coords.longitude;
+      let locationString;
+      fetch(nominatimurl)
+        .then((resp) => resp.json())
+        .then(function(data) {
+          if (data.address) {
+            if (data.address.city && data.address.state) {
+              locationString = data.address.city + ', ' + data.address.state;
+            }
+            else if (data.address.county && data.address.state) {
+              locationString = data.address.county + ', ' + data.address.state;
+            }
+          }
+          if (locationString !== null) {
+            this.setState({ location: locationString });
+          }
+        }.bind(this))
+        .catch(function(err) {
+          console.log(err);
+        });
 		}
 	}
 
