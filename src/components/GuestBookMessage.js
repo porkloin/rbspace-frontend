@@ -9,7 +9,8 @@ const GuestBookMessage = ( { message } ) => (
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'flex-start',
-      flexWrap: 'wrap'
+      flexWrap: 'wrap',
+      margin: '0'
     }}
   >
     {message.message.length > 0 ? <Emoji emoji={message.message} size={24} /> : null}
