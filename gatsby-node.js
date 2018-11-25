@@ -1,7 +1,7 @@
 const path = require(`path`)
 const transliteration = require('transliteration')
 
-// Create a slug for each recipe and set it as a field on the node.
+// Create a slug for each article and set it as a field on the node.
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `node__article`) {
@@ -17,7 +17,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
-  exports.createPages = ({ actions, graphql }) => {
+exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
@@ -44,7 +44,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
           reject(result.errors)
         }
 
-        // Create pages for each recipe.
+        // Create pages for each article.
         result.data.allNodeArticle.edges.forEach(({ node }) => {
           createPage({
             path: node.fields.slug,
