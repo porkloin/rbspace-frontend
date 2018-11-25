@@ -2,6 +2,7 @@ import { graphql } from "gatsby"
 import moment from 'moment'
 import React from "react"
 import FeaturedImage from '../components/FeaturedImage'
+import PostBody from '../components/PostBody'
 
 import Layout from "../components/layout"
 
@@ -11,7 +12,7 @@ const BlogPost = ({ data }) => (
       <h1>{data.nodeArticle.title}</h1>
       <i><p className="publication-date">{moment.unix(data.nodeArticle.created).format('DD MMMM, YYYY - h:mm A')}</p></i>
       <FeaturedImage imgFluid={data.nodeArticle.relationships.field_image ? data.nodeArticle.relationships.field_image.localFile.childImageSharp.fluid : null} />
-      <span dangerouslySetInnerHTML={{__html: data.nodeArticle.body.processed}}></span>
+      <PostBody body={data.nodeArticle.body.processed} />
     </article>
   </Layout>
 )
