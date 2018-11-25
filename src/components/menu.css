@@ -48,7 +48,7 @@
   margin-bottom: .725rem;
 }
 
-@media(min-width:768px) {
+@media(min-width:850px) {
   .menu--mobile , .menu--mobile--container{
     display: none;
   }
