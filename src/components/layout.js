@@ -52,6 +52,8 @@ const Layout = ({ children, themeToggle, theme, pageTitle, pageDescription }) =>
           ]}
         >
           <html lang="en" />
+          <link rel="webmention" href="https://webmention.io/www.ryanbateman.space/webmention" />
+          <link rel="pingback" href="https://webmention.io/www.ryanbateman.space/xmlrpc" />
           <style>{ theme === 'light' ? lightCss : darkCss }</style>
         </Helmet>
       <Header
