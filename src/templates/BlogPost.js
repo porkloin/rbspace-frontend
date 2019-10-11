@@ -1,5 +1,4 @@
 import { graphql } from "gatsby"
-import moment from 'moment'
 import React from "react"
 import PostBody from '../components/PostBody'
 import Img from "gatsby-image"

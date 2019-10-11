@@ -1,5 +1,6 @@
 import React from 'react'
 import BlogTeaser from './BlogTeaser'
+import { graphql } from 'gatsby'
 import { Link, StaticQuery } from 'gatsby'
 
 import './BlogRoll.css'

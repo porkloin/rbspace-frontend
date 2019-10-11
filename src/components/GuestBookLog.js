@@ -4,7 +4,6 @@ import uuidv1 from 'uuid/v1';
 import { animateScroll } from "react-scroll";
 import { Picker } from 'emoji-mart';
 import { geolocated } from 'react-geolocated';
-import openGeocoder from 'node-open-geocoder';
 
 import GuestBookMessage from './GuestBookMessage'
 import 'emoji-mart/css/emoji-mart.css'
