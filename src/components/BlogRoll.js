@@ -24,9 +24,9 @@ const BlogRoll = ( {blogs, readMore} ) => (
         <BlogTeaser
           key={blog.node.fields.slug}
           data={data}
-          postTitle={blog.node.title}
-          postSummary={blog.node.body.summary.length > 0 ? blog.node.body.summary : blog.node.body.processed.substring(0,200) + '...' }
-          postImage={blog.node.relationships.field_image ? blog.node.relationships.field_image.localFile.childImageSharp.fluid : data.fileName.childImageSharp.fluid}
+          postTitle={blog.node.frontmatter.title}
+          postSummary={blog.node.excerpt}
+          postImage={ blog.node.frontmatter.featuredImage.childImageSharp.fluid}
           postSlug={blog.node.fields.slug}
         />
       ))}
