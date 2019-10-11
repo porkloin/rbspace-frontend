@@ -69,7 +69,7 @@ Snag the line from Database > Command Line, which should look something like
 
 When entered, you'll be dropped into a MySQL prompt. Create a new database:
 
-```mysql
+```
 CREATE DATABASE migrate_source;
 exit;
 ```
