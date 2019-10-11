@@ -24,9 +24,9 @@ const Footer = () => (
           width: '100%',
         }}
       >
-        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />All written work on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
         <br /> <br />
-        Built with <a href="http://gatsbyjs.org/">Gatsby</a> in the front and <a href="https://www.drupal.org/8">Drupal 8</a> in the back.
+        Built with <a href="http://gatsbyjs.org/">GatsbyJS</a>.
       </p>
     </div>
   </footer>

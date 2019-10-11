@@ -1,24 +1,49 @@
 import { graphql } from "gatsby"
-import moment from 'moment'
 import React from "react"
-import FeaturedImage from '../components/FeaturedImage'
 import PostBody from '../components/PostBody'
-
+import Img from "gatsby-image"
 import Layout from "../components/layout"
+import '../components/FeaturedImage.css'
+import './BlogPost.css'
 
 const BlogPost = ({ data }) => (
-  <Layout pageTitle={data.nodeArticle.title} pageDescription={data.nodeArticle.body.summary.length > 0 ? data.nodeArticle.body.summary : data.nodeArticle.body.processed.substring(0,200) + '...' }>
+  <Layout pageTitle={data.markdownRemark.frontmatter.title} pageDescription={data.markdownRemark.excerpt}>
     <article>
-      <h1>{data.nodeArticle.title}</h1>
-      <i><p className="publication-date">{moment.unix(data.nodeArticle.created).format('DD MMMM, YYYY - h:mm A')}</p></i>
-      <FeaturedImage imgFluid={data.nodeArticle.relationships.field_image ? data.nodeArticle.relationships.field_image.localFile.childImageSharp.fluid : null} />
-      <PostBody body={data.nodeArticle.body.processed} />
+      <h1>{data.markdownRemark.frontmatter.title}</h1>
+      <i><p className="publication-date">{data.markdownRemark.frontmatter.date}</p></i>
+      <div className="featured-image circle">
+        <Img fluid={data.markdownRemark.frontmatter.featuredImage.childImageSharp.fluid} />
+      </div>
+      <PostBody body={data.markdownRemark.html} />
     </article>
   </Layout>
 )
 export default BlogPost
 
-export const query = graphql`
+export const pageQuery = graphql`
+  query BlogPostBySlug($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt(pruneLength: 160)
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        description
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 200) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+
+  /*export const query = graphql`
   query($slug: String!) {
     nodeArticle (fields: { slug: { eq: $slug } }) {
       title
@@ -41,4 +66,4 @@ export const query = graphql`
       }
     }
   }
-`
+`*/

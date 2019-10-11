@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from "gatsby"
 
 import Layout from '../components/layout'
 import Biographical from '../components/biographical'
@@ -24,13 +25,43 @@ const IndexPage = ( {data} ) => (
     <p>I am a web developer and internet person currently working with <a href="http://www.hook42.com">Hook 42.</a> I primarily occupy meatspace in Fairbanks, Alaska.</p>
     <p style={{ marginBottom: '1.45rem'}}>Things I like: bicycling, playing music, computers, and video games.</p>
     <h2>Blog</h2>
-    <BlogRoll blogs={data.allNodeArticle.edges} readMore={true} />
+    <BlogRoll blogs={data.allMarkdownRemark.edges} readMore={true} />
   </Layout>
 )
 
 export default IndexPage
-
 export const query = graphql`
+  query
+    {
+      allMarkdownRemark(
+        limit: 5
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
+        edges {
+          node {
+            id
+            excerpt(pruneLength: 160)
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              date(formatString: "MMMM DD, YYYY")
+              featuredImage {
+                childImageSharp {
+                  fluid(maxWidth: 200) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `
+
+  /*export const query = graphql`
   query
     {
       allNodeArticle(limit: 5, sort: { fields: created, order: DESC}) {
@@ -67,3 +98,4 @@ export const query = graphql`
       }
     }
   `
+  */
