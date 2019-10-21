@@ -1,8 +1,9 @@
 ---
-title: "Tutorial: GatsbyJS for Drupalers; or, How to JAMStack-ify your Drupal Site with GatsbyJS"
-date: "2018-11-11T23:00:20.000Z"
-description: "Tutorial: GatsbyJS for Drupalers; or, How to JAMStack-ify your Drupal Site with GatsbyJS"
+title: 'Tutorial: GatsbyJS for Drupalers; or, How to JAMStack-ify your Drupal Site with GatsbyJS'
+date: '2018-11-11T23:00:20.000Z'
+description: 'Tutorial: GatsbyJS for Drupalers; or, How to JAMStack-ify your Drupal Site with GatsbyJS'
 featuredImage: ../../../images/code.png
+published: true
 ---
 
 [GatsbyJS](http://gatsbyjs.org/) is everywhere these days. The upstart react-based site generator has come a long way from its humble beginnings. A couple of years ago, Gatsby definitely played second (or third, or fourth?) fiddle to more prominent static site generators like Jekyll and Hugo. Fast forward a couple years, however, and the web development world is raving about Gatsby. And for good reason! The React front-end ecosystem continues to boom, with no indication that it will slow any time soon. Meanwhile, Gatsby has outgrown its origins as a static site generator. Growing in parallel with the prevalence of the [JAMStack](https://jamstack.org/) and the maturation of microservices/serverless architectures, Gatsby has repositioned itself as a unifying technology at the center of what [the creators of Gatsby call "the content mesh"](https://www.gatsbyjs.org/blog/2018-10-04-journey-to-the-content-mesh) – a confluence of services, content, and functions that make up a complex web application.
@@ -16,7 +17,6 @@ A few weeks ago I began the process of converting my personal website and blog t
 ### 1\. Install Gatsby
 
 ![Gatsby Homepage](./gatsby1.png)
-
 
 Before we do anything else, we need to install Gatsby. Gatsby is distributed via NPM - which means you should already have NodeJS and NPM installed before beginning this tutorial. If you don't currently have those installed you can [find installation steps on the NodeJS website.](https://nodejs.org/en/)
 
@@ -60,18 +60,19 @@ First and most important among the directories in our Gatsby app is the `src` di
 
 There are four config files that you can find at the root of any Gatsby (v2) project. Each is used for a different level of configuration on the Gatsby site we're building:
 
-*   gatsby-browser.js: this is a file that allows us to implement any of [Gatsby's browser APIs.](https://www.gatsbyjs.org/docs/browser-apis/) Think of these as ways of injecting our own custom logic into Gatsby's boilerplate systems, such as routing. In that case, we could use onRouteUpdate to do something really annoying like send the client a javascript alert every time they load a new page.
-*   gatsby-config.js: this file is our main configuration file for the Gatsby site. If we want to load any of Gatsby's [awesome contributed plugins](https://www.gatsbyjs.org/plugins/) we would declare them and any config options they need in this file. We can also define static details about our site that we want to render using the `<StaticQuery>` data fetcher component (more on that later). Take a look at the `siteMetadata` key in the default config file - you'll see the name that appears in the header of our new Gatsby site is defined here! If you update it, your dev server will automatically reload with the new title.
-*   gatsby-node.js: [Gatsby's node APIs](https://www.gatsbyjs.org/docs/node-apis) can be implemented here to do things like run an onCreatePage() function that modifies pages created by a source plugin. This is also the most likely place where we'd run any custom code related to creating pages from our source backend (like Drupal).
-*   gatsby-ssr.js: these are overrides for Gatsby's server rendering system. Since Gatsby is rendering each page on build time to output to a static HTML file, we have the opportunity to reach in and modify the behaviors happening during that server render step. One very common manipulation to make here is to use wrapRootElement() to wrap the entire application in a Redux state store. But that is a conversation for another tutorial!
+- gatsby-browser.js: this is a file that allows us to implement any of [Gatsby's browser APIs.](https://www.gatsbyjs.org/docs/browser-apis/) Think of these as ways of injecting our own custom logic into Gatsby's boilerplate systems, such as routing. In that case, we could use onRouteUpdate to do something really annoying like send the client a javascript alert every time they load a new page.
+- gatsby-config.js: this file is our main configuration file for the Gatsby site. If we want to load any of Gatsby's [awesome contributed plugins](https://www.gatsbyjs.org/plugins/) we would declare them and any config options they need in this file. We can also define static details about our site that we want to render using the `<StaticQuery>` data fetcher component (more on that later). Take a look at the `siteMetadata` key in the default config file - you'll see the name that appears in the header of our new Gatsby site is defined here! If you update it, your dev server will automatically reload with the new title.
+- gatsby-node.js: [Gatsby's node APIs](https://www.gatsbyjs.org/docs/node-apis) can be implemented here to do things like run an onCreatePage() function that modifies pages created by a source plugin. This is also the most likely place where we'd run any custom code related to creating pages from our source backend (like Drupal).
+- gatsby-ssr.js: these are overrides for Gatsby's server rendering system. Since Gatsby is rendering each page on build time to output to a static HTML file, we have the opportunity to reach in and modify the behaviors happening during that server render step. One very common manipulation to make here is to use wrapRootElement() to wrap the entire application in a Redux state store. But that is a conversation for another tutorial!
 
 ### 3\. Our First Changes, `<StaticQuery>`, and Using GraphQL To Access Data
 
 The starter kit we've just created is great and all, but it's hardly our own. Let's make a few modifications that personalize the starter application.
 
-One of the really cool things about Gatsby is that regardless of the source of data, we query it and use it in our React components using the same query language – [GraphQL](https://graphql.org/). But what does that _really_ mean? To put it basically, even if we have two completely different types of data (JSON files on our local computer and fields from a Content Type on our Drupal website) we're going to use the same syntax and fundamental query structure. Another really cool thing about Gatsby's GraphQL integration is that _even our site configuration settings can be queried using GraphQL!_
+One of the really cool things about Gatsby is that regardless of the source of data, we query it and use it in our React components using the same query language – [GraphQL](https://graphql.org/). But what does that *really* mean? To put it basically, even if we have two completely different types of data (JSON files on our local computer and fields from a Content Type on our Drupal website) we're going to use the same syntax and fundamental query structure. Another really cool thing about Gatsby's GraphQL integration is that *even our site configuration settings can be queried using GraphQL!*
 
 To understand this a little better, let's take a look at how that is used in our starter kit codebase. If we open the file `"gatsby-config.js"` from the root of our Gatsby project, you'll see the following lines:
+
 ```javascript
     module.exports = {
       siteMetadata: {
@@ -89,7 +90,7 @@ Let's open our layout file (`src/components/layout.js`) to find out more:
 ```javascript
     ...lines skipped...
     import { StaticQuery, graphql } from 'gatsby'
-    
+
     import Header from './header'
     ...lines skipped...
     const Layout = ({ children }) => (
@@ -124,7 +125,7 @@ Let's open our layout file (`src/components/layout.js`) to find out more:
     export default Layout
 ```
 
- you can see, at the beginning of our file we're importing `StaticQuery` and `graphql` from the 'gatsby' package – StaticQuery allows us to write a special GraphQL query that allows the component to access some data. The query itself should look quite familiar, as the structure is very similar to the gatsby-config.js file we just looked at. Lastly, we can see that the entire Layout component is actually one big `<StaticQuery>` component – rather than a conventional React component where we might have our own render function, we have a bunch of JSX written into the render prop of the `<StaticQuery>` component. That render prop has `data` passed as a props argument into the render function. And in both the `<Helmet>` element and `<Header>` element we are using our site title from that `data` prop.
+you can see, at the beginning of our file we're importing `StaticQuery` and `graphql` from the 'gatsby' package – StaticQuery allows us to write a special GraphQL query that allows the component to access some data. The query itself should look quite familiar, as the structure is very similar to the gatsby-config.js file we just looked at. Lastly, we can see that the entire Layout component is actually one big `<StaticQuery>` component – rather than a conventional React component where we might have our own render function, we have a bunch of JSX written into the render prop of the `<StaticQuery>` component. That render prop has `data` passed as a props argument into the render function. And in both the `<Helmet>` element and `<Header>` element we are using our site title from that `data` prop.
 
 Now that we roughly understand how to query and use data in our template, let's try to make a change to personalize our site a little!
 
@@ -139,6 +140,7 @@ First, let's go back to `gatsby-config.js` - let's make a small change:
       ...lines skipped...
     }
 ```
+
 Save that file, and visit your local development server at [http://localhost:8000](http://localhost:8000). Huzzah! You should see our updated title!
 
 ![Gatsby starter kit with our updated title!](./gatsby2.png)
@@ -150,14 +152,13 @@ Most GraphQL implementations will come with an interactive query explorer, Graph
 Let's take the same query that we use in our `<Layout>` component as an example. I've extracted it here for ease of use:
 
 ```graphql
-    {
-      site {
-        siteMetadata {
-          title
-        }
-      }
+{
+  site {
+    siteMetadata {
+      title
     }
-    
+  }
+}
 ```
 
 Copy and paste that query into the left-hand side of Graph_i_QL, hit the "play" button at the top of the screen, and you should see our title get returned on the right.
@@ -165,9 +166,10 @@ Copy and paste that query into the left-hand side of Graph_i_QL, hit the "play" 
 Nice! But still, that doesn't help our problem of not knowing what data is available, right? Actually, Graph_i_QL has one more super important feature – autocomplete!
 
 If you replace your query with an empty query object like so:
+
 ```graphql
     {
-    
+
     }
 ```
 
@@ -180,9 +182,9 @@ Similarly, if you just start typing, Graph_i_QL will try to autocomplete for you
 Let's try an example of how powerful this autocomplete feature can be. On our query panel, let's try the following:
 
 ```graphql
-    {
-      allSitePage
-    }
+{
+  allSitePage
+}
 ```
 
 Once you've pasted that into place, hit the "play" button at top of the screen. Automatically, Graph_i_QL will expand our query to include the sub-fields of all our site pages, and return a result for each one. Magic!
@@ -191,7 +193,7 @@ Once you've pasted that into place, hit the "play" button at top of the screen. 
 
 OK - so we know how to query data in our template, we know how to test out our queries in Graph_i_QL, and we know how to render our data using our React component. Let's try to add some extra data to our site config and put that knowledge to use!
 
-Let's say we want our site not only to have a `title` in our _`siteMetadata` _element but also a `slogan`! We'll go ahead and create the new key and value on our JSON object in `gatsby-config.js`:
+Let's say we want our site not only to have a `title` in our \_`siteMetadata` _element but also a `slogan`! We'll go ahead and create the new key and value on our JSON object in `gatsby-config.js`:
 
 ```javascript
     module.exports = {
@@ -210,10 +212,10 @@ Now that we've updated that data, we do need to **stop and restart our gatsby de
     import PropTypes from 'prop-types'
     import Helmet from 'react-helmet'
     import { StaticQuery, graphql } from 'gatsby'
-    
+
     import Header from './header'
     import './layout.css'
-    
+
     const Layout = ({ children }) => (
       <StaticQuery
         query={graphql`
@@ -246,7 +248,7 @@ So let's open `src/components/header.js` and actually render our slogan on the 
 ```javascript
     import React from 'react'
     import { Link } from 'gatsby'
-    
+
     const Header = ({ siteTitle, slogan }) => (
       ...lines skipped...
           <h1 style={{ margin: 0 }}>
@@ -269,7 +271,7 @@ So let's open `src/components/header.js` and actually render our slogan on the 
           </span>
       ...lines skipped...
     )
-    
+
     export default Header
 ```
 
@@ -325,36 +327,36 @@ Next, we'll include some configuration in our **gatsby-config.js** file to ens
 
 Once the configuration has been saved, restart your dev server ("ctrl + c" and then "gatsby develop" your site is still loading at [http://localhost:8000](http://localhost:8000). In the event that your site isn't loading, there are two common error codes you may see:
 
-*   Error code 406: you've forgotten to set the "Access JSON API resource list" permission in Drupal
-*   Error code 405: you probably didn't install the jsonapi\_extras module.
+- Error code 406: you've forgotten to set the "Access JSON API resource list" permission in Drupal
+- Error code 405: you probably didn't install the jsonapi_extras module.
 
 Once we have our development server up and running with our Drupal data, let's go ahead and query it! If we return to our Graph_i_QL query explorer ([http://localhost:8000/\_\_\_graphql](http://localhost:8000/___graphql)), we can see that we have a ton of new top-level query autocompletions to choose from: allNodeArticle, allNodePage, etc.  Try running a query on allNodeArticle:
 
 ```graphql
-    {
-    	allNodeArticle
-    }
+{
+  allNodeArticle
+}
 ```
 
 hit the "play" button at the top of the page, and you should automatically see the query expand to show all the available sub-fields. Using autocomplete, we might expand our query out a bit to include some more data, such as node ID, title, and body:
 
 ```graphql
-    {
-      allNodeArticle {
-        edges {
-          node {
-            id
-            title
-            body {
-              value
-              format
-              processed
-              summary
-            }
-          }
+{
+  allNodeArticle {
+    edges {
+      node {
+        id
+        title
+        body {
+          value
+          format
+          processed
+          summary
         }
       }
     }
+  }
+}
 ```
 
 ### 5\. Creating a "dumb" Blog Component
@@ -366,58 +368,58 @@ The first thing we'll need to do is create a new page in Gatsby. Pages, you'll r
 Let's start by creating a new file at `src/pages/blog.js` with the following contents:
 
 ```javascript
-    import React from 'react'
-    
-    import Layout from '../components/layout'
-    
-    const BlogPage = () => (
-      <Layout>
-        <h1>Blog</h1>
-        <p>This is where our blog will live</p>
-      </Layout>
-    )
-    
-    export default BlogPage
+import React from 'react'
+
+import Layout from '../components/layout'
+
+const BlogPage = () => (
+  <Layout>
+    <h1>Blog</h1>
+    <p>This is where our blog will live</p>
+  </Layout>
+)
+
+export default BlogPage
 ```
 
 This is a very simple React component that doesn't draw on any Drupal data (yet), but gives us the shell of a page that we can build on.
 
 ![Basic blog page](./gatsby7.png)
 
-Next, since we're using React and it's nice to define things are re-usable components as much as possible, let's make a `BlogTeaser `component in our `src/components` directory:
+Next, since we're using React and it's nice to define things are re-usable components as much as possible, let's make a `BlogTeaser`component in our `src/components` directory:
 
 ```javascript
-    import React from 'react'
-    
-    const BlogTeaser = ( {title, summary} ) => (
-      <div className="blog--teaser">
-        <h2>{title}</h2>
-        <p>{summary}</p>
-      </div>
-    )
-    
-    export default BlogTeaser
+import React from 'react'
+
+const BlogTeaser = ({ title, summary }) => (
+  <div className="blog--teaser">
+    <h2>{title}</h2>
+    <p>{summary}</p>
+  </div>
+)
+
+export default BlogTeaser
 ```
 
 Here we can see that we've created the component with the expectation that it will receive two props: `title` and `summary`. Let's try it out by importing it in our `blog.js` page template:
 
 ```javascript
-    import React from 'react'
-    
-    import Layout from '../components/layout'
-    import BlogTeaser from '../components/BlogTeaser.js'
-    
-    const BlogPage = () => (
-      <Layout>
-        <h1>Blog</h1>
-        <BlogTeaser
-          title='My first great blog post'
-          summary="I have so many great thoughts, I can't help but share them!"
-        />
-      </Layout>
-    )
-    
-    export default BlogPage
+import React from 'react'
+
+import Layout from '../components/layout'
+import BlogTeaser from '../components/BlogTeaser.js'
+
+const BlogPage = () => (
+  <Layout>
+    <h1>Blog</h1>
+    <BlogTeaser
+      title="My first great blog post"
+      summary="I have so many great thoughts, I can't help but share them!"
+    />
+  </Layout>
+)
+
+export default BlogPage
 ```
 
 Great! You should see your first dumb (that is, non-Drupal driven) blog teaser.
@@ -431,45 +433,45 @@ Whenever we're building out a new piece of functionality it can be a great idea 
 Back in our `blog.js` component (`src/pages/blog.js`) we need to use a GraphQL query to pass data into our component. We did this earlier when we were pulling data from our config file using `<StaticQuery>`, but this time we're going to do it using a **page query** - these types of queries can only be used on a **page** component type (components found in our **pages directory**), but they also have some extra capabilities over a `<StaticQuery>`. Page queries are the only type of query that can accept variables, for example. For more info, you can check out [the Gatsby docs on the subject](https://www.gatsbyjs.org/docs/static-query/#how-staticquery-differs-from-page-query) to learn more. For now, let's suffice to say that page queries have a different syntax, which we'll see in the following updates to our blog page component:
 
 ```javascript
-    import React from 'react'
-    import { graphql } from 'gatsby'
-    
-    import Layout from '../components/layout'
-    import BlogTeaser from '../components/BlogTeaser.js'
-    
-    const BlogPage = ( { data } ) => (
-      <Layout>
-        <h1>Blog</h1>
-        <BlogTeaser
-          title='My first great blog post'
-          summary="I have so many great thoughts, I can't help but share them!"
-        />
-      </Layout>
-    )
-    
-    export const query = graphql`
-      query BlogPageQuery {
-        allNodeArticle {
-          edges {
-            node {
-              id
-              title
-              body {
-                processed
-                summary
-              }
-            }
+import React from 'react'
+import { graphql } from 'gatsby'
+
+import Layout from '../components/layout'
+import BlogTeaser from '../components/BlogTeaser.js'
+
+const BlogPage = ({ data }) => (
+  <Layout>
+    <h1>Blog</h1>
+    <BlogTeaser
+      title="My first great blog post"
+      summary="I have so many great thoughts, I can't help but share them!"
+    />
+  </Layout>
+)
+
+export const query = graphql`
+  query BlogPageQuery {
+    allNodeArticle {
+      edges {
+        node {
+          id
+          title
+          body {
+            processed
+            summary
           }
         }
       }
-    `
-    
-    export default BlogPage
+    }
+  }
+`
+
+export default BlogPage
 ```
 
-As you can see, we've only made a few modifications to our blog page component – first, we import the ` graphql ` library from Gatsby; next, we pass ` data ` into our component as a prop; and last, we export a new variable called `query`, which consists of our GraphQL query from earlier, which we know from our query explorer will return all of our nodes in the "article" content type. Once you've saved that file, your `blog` page component will have access to all of the data returned from our query in its `data` prop. We can confirm that using the [React devtools](https://github.com/facebook/react-devtools). If you haven't previously installed them, now is a great opportunity. Using the devtools we can use our normal browser inspector (right click > inspect element / cmd + alt + i) and visit the "React" tab to see a complete layout of our React virtual dom, including the real-time values of any component's props, state, etc.
+As you can see, we've only made a few modifications to our blog page component – first, we import the `graphql` library from Gatsby; next, we pass `data` into our component as a prop; and last, we export a new variable called `query`, which consists of our GraphQL query from earlier, which we know from our query explorer will return all of our nodes in the "article" content type. Once you've saved that file, your `blog` page component will have access to all of the data returned from our query in its `data` prop. We can confirm that using the [React devtools](https://github.com/facebook/react-devtools). If you haven't previously installed them, now is a great opportunity. Using the devtools we can use our normal browser inspector (right click > inspect element / cmd + alt + i) and visit the "React" tab to see a complete layout of our React virtual dom, including the real-time values of any component's props, state, etc.
 
-If you use the inspector to select your **Blog** page title and then click the "React" tab in your devtools, you should see a component named ` <BlogPage> ` – click it and the right-side panel will show you all the props that have been passed to that component. Expand the `data` component and you should see the entire structure of our returned query object!
+If you use the inspector to select your **Blog** page title and then click the "React" tab in your devtools, you should see a component named `<BlogPage>` – click it and the right-side panel will show you all the props that have been passed to that component. Expand the `data` component and you should see the entire structure of our returned query object!
 
 ![React devtools showing our props data](./gatsby9.png)
 
@@ -501,18 +503,17 @@ This will take each item and output it into a `<BlogTeaser>` component - using t
 One thing to note – if you see your body text appear with HTML tags rendering in the display, you'll need to pass your summary value through React's DangerouslySetInnerHTML attribute:
 
 ```javascript
-    import React from 'react'
-    
-    const BlogTeaser = ( {title, summary} ) => (
-      <div className="blog--teaser">
-        <h2>{title}</h2>
-        <p dangerouslySetInnerHTML={{__html: summary}} />
-      </div>
-    )
-    
-    export default BlogTeaser
-```
+import React from 'react'
 
+const BlogTeaser = ({ title, summary }) => (
+  <div className="blog--teaser">
+    <h2>{title}</h2>
+    <p dangerouslySetInnerHTML={{ __html: summary }} />
+  </div>
+)
+
+export default BlogTeaser
+```
 
 ### 7\. Dynamically Creating Pages from Drupal
 
@@ -525,77 +526,77 @@ Let's unpack that a little bit – first of all, a Gatsby site doesn't **need**
 Before we get too much further, let's take a look at some code we'll place in the `gatsby-node.js` file:
 
 ```javascript
-    const path = require(`path`)
-    const transliteration = require('transliteration')
-    
-    // Create a slug for each article and set it as a field on the node.
-    exports.onCreateNode = ({ node, getNode, actions }) => {
-      const { createNodeField } = actions
-      if (node.internal.type === `node__article`) {
-        const slugFragment = transliteration.slugify(node.title)
-        const slug = `/blog/${slugFragment}/`
-        createNodeField({
-          node,
-          name: `slug`,
-          value: slug,
-        })
-      }
-    }
-    
-    // Implement the Gatsby API “createPages”. This is called once the
-    // data layer is bootstrapped to let plugins create pages from data.
-    exports.createPages = ({ actions, graphql }) => {
-      const { createPage } = actions
-    
-      return new Promise((resolve, reject) => {
-        const postTemplate = path.resolve(`src/templates/BlogPost.js`)
-        // Query for article nodes to use in creating pages.
-        resolve(
-          graphql(
-            `
-              {
-                allNodeArticle {
-                  edges {
-                    node {
-                      title
-                      fields {
-                        slug
-                      }
-                    }
+const path = require(`path`)
+const transliteration = require('transliteration')
+
+// Create a slug for each article and set it as a field on the node.
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `node__article`) {
+    const slugFragment = transliteration.slugify(node.title)
+    const slug = `/blog/${slugFragment}/`
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
+}
+
+// Implement the Gatsby API “createPages”. This is called once the
+// data layer is bootstrapped to let plugins create pages from data.
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
+
+  return new Promise((resolve, reject) => {
+    const postTemplate = path.resolve(`src/templates/BlogPost.js`)
+    // Query for article nodes to use in creating pages.
+    resolve(
+      graphql(
+        `
+          {
+            allNodeArticle {
+              edges {
+                node {
+                  title
+                  fields {
+                    slug
                   }
                 }
               }
-            `
-          ).then(result => {
-            if (result.errors) {
-              reject(result.errors)
             }
-    
-            // Create pages for each article.
-            result.data.allNodeArticle.edges.forEach(({ node }) => {
-              createPage({
-                path: node.fields.slug,
-                component: postTemplate,
-                context: {
-                  slug: node.fields.slug,
-                },
-              })
-            })
+          }
+        `
+      ).then(result => {
+        if (result.errors) {
+          reject(result.errors)
+        }
+
+        // Create pages for each article.
+        result.data.allNodeArticle.edges.forEach(({ node }) => {
+          createPage({
+            path: node.fields.slug,
+            component: postTemplate,
+            context: {
+              slug: node.fields.slug,
+            },
           })
-        )
+        })
       })
-    }
+    )
+  })
+}
 ```
 
 Okay, that's a lot to digest all at once, so let's break it down. We really only have two big methods that we're using here. We'll tackle each one separately:
 
-First is **[onCreateNode](https://www.gatsbyjs.org/docs/node-apis/#onCreateNode)**, which fires for every Gatsby node created. We're going to use the NPM library [Transliteration](https://www.npmjs.com/package/transliteration) to generate a "slug", or a URL-ified version of our article's title. Once we've created that we're going to **inject our new modified value as an additional field** **on our Gatsby node.** When our node has been parsed and is available as a Gatsby node, we're saying "let's add one more field that didn't exist on the source system, and I want it to be _this"._ 
+First is **[onCreateNode](https://www.gatsbyjs.org/docs/node-apis/#onCreateNode)**, which fires for every Gatsby node created. We're going to use the NPM library [Transliteration](https://www.npmjs.com/package/transliteration) to generate a "slug", or a URL-ified version of our article's title. Once we've created that we're going to **inject our new modified value as an additional field** **on our Gatsby node.** When our node has been parsed and is available as a Gatsby node, we're saying "let's add one more field that didn't exist on the source system, and I want it to be *this".*
 
 Second, we're going to use [**createPages**](https://www.gatsbyjs.org/docs/node-apis/#createPages), which is a Gatsby API that gets called when our nodes have been parsed and made available (after the data layer has bootstrapped). **createPages** is called after our nodes have been processed and made available in the data layer. This method expects for you to return a Javascript Promise – if you're unfamiliar with what Promises are and how to use them in JS, [I highly recommend this short tutorial from scotch.io on the subject.](https://scotch.io/tutorials/javascript-promises-for-dummies) So, we need to return a **promise** that resolves if our GraphQL query for our Drupal data completes successfully. Then, we need to take that result and run it through **createPages**' **action** function (`createPage()`), which can be used to create a page per node in a GraphQL query. The `createPage()` action takes three arguments:
 
-*   path – the route where we want to serve the page
-*   template – a Gatsby component that we want to use to create the page
-*   context – additional data which can be used as arguments on the page template's GraphQL query
+- path – the route where we want to serve the page
+- template – a Gatsby component that we want to use to create the page
+- context – additional data which can be used as arguments on the page template's GraphQL query
 
 One important thing to notice is that we're **not passing all of the page data to the pageCreate** **function**. The actual querying of the data happens in the template – all we are providing the template with is enough data for that individual page to be able to run **its own** GraphQL query for the single node that it needs. So we are giving the template access to the **slug** value that we created earlier, which can be used to query for that individual node in our template.
 
@@ -606,36 +607,44 @@ Now that we have our logic defined for programmatically building pages, we need 
 Let's create a new directory, `src/templates`, and create a new file in it, called `BlogPost.js`:
 
 ```javascript
-    import { graphql } from "gatsby"
-    import moment from 'moment'
-    import React from "react"
-    
-    import Layout from "../components/layout"
-    
-    const BlogPost = ({ data }) => (
-      <Layout>
-        <article>
-          <h1>{data.nodeArticle.title}</h1>
-          <i><p className="publication-date">{moment.unix(data.nodeArticle.created).format('DD MMMM, YYYY - h:mm A')}</p></i>
-          <span dangerouslySetInnerHTML={{__html: data.nodeArticle.body.processed}}></span>
-        </article>
-      </Layout>
-    )
-    export default BlogPost
-    
-    export const query = graphql`
-      query($slug: String!) {
-        nodeArticle (fields: { slug: { eq: $slug } }) {
-          title
-          created
-          changed
-          body {
-            processed
-            summary
-          }
-        }
+import { graphql } from 'gatsby'
+import moment from 'moment'
+import React from 'react'
+
+import Layout from '../components/layout'
+
+const BlogPost = ({ data }) => (
+  <Layout>
+    <article>
+      <h1>{data.nodeArticle.title}</h1>
+      <i>
+        <p className="publication-date">
+          {moment
+            .unix(data.nodeArticle.created)
+            .format('DD MMMM, YYYY - h:mm A')}
+        </p>
+      </i>
+      <span
+        dangerouslySetInnerHTML={{ __html: data.nodeArticle.body.processed }}
+      ></span>
+    </article>
+  </Layout>
+)
+export default BlogPost
+
+export const query = graphql`
+  query($slug: String!) {
+    nodeArticle(fields: { slug: { eq: $slug } }) {
+      title
+      created
+      changed
+      body {
+        processed
+        summary
       }
-    `
+    }
+  }
+`
 ```
 
 The first thing we'll notice is that we're using a library here, [Moment.js](https://momentjs.com/) to do some timestamp parsing, so we'll need to install that with NPM:
@@ -651,6 +660,7 @@ Moving on to our query, the first thing you'll notice is that the syntax is slig
 We only need to do one last thing! Now that our Drupal Articles have pages on our Gatsby site, we need a way to access them! But how? If you remember, we injected the new field `slug` into each of our nodeArticle nodes in the data layer, so if we revisit our query in our `Blog.js` page component, we can get that from our query and pass it down to our `<BlogTeaser>` components to create a link to the full view for that given blog post.
 
 In `src/pages/blog.js`:
+
 ```javascript
     ...lines skipped...
     const BlogPage = ( { data } ) => (
@@ -666,7 +676,7 @@ In `src/pages/blog.js`:
         ) )}
       </Layout>
     )
-    
+
     export const query = graphql`
       query BlogPageQuery {
         allNodeArticle {
@@ -694,19 +704,19 @@ As you can see, we've added `slug` to our GraphQL query, and we're passing it 
 `src/components/BlogTeaser.js`:
 
 ```javascript
-    import React from 'react'
-    import { Link } from 'gatsby'
-    
-    const BlogTeaser = ( {slug, title, summary} ) => (
-      <div className="blog--teaser">
-        <Link to={slug}>
-          <h2>{title}</h2>
-        </Link>
-        <p dangerouslySetInnerHTML={{__html: summary}} />
-      </div>
-    )
-    
-    export default BlogTeaser
+import React from 'react'
+import { Link } from 'gatsby'
+
+const BlogTeaser = ({ slug, title, summary }) => (
+  <div className="blog--teaser">
+    <Link to={slug}>
+      <h2>{title}</h2>
+    </Link>
+    <p dangerouslySetInnerHTML={{ __html: summary }} />
+  </div>
+)
+
+export default BlogTeaser
 ```
 
 Now, in our `BlogTeaser` component we're using a Gatsby-provided component, `Link`, to link to our newly-built page by the slug. Using `<Link>` has the added benefit that it will use Gatsby's built-in prefetching functionality, making your site blazing fast after the initial page load.

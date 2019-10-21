@@ -1,8 +1,9 @@
 ---
-title: "Twig Tip: Null Coalescing Operator"
-date: "2019-01-22T23:00:20.000Z"
-description: "Twig Tip: Null Coalescing Operator"
+title: 'Twig Tip: Null Coalescing Operator'
+date: '2019-01-22T23:00:20.000Z'
+description: 'Twig Tip: Null Coalescing Operator'
 featuredImage: ../../../images/code.png
+published: false
 ---
 
 Twig folks, be honest: how many times have you written a snippet of Twig code that looks like this?
@@ -31,4 +32,4 @@ As such, we can stack a lot of possible values into a null coalescing operator a
 
 ```twig
 {{ node.field_party ?? node.field_gathering ?? node.field_get_together ?? node.field_assembly ?? node.field_meeting_of_minds ?? null }}
-``` 
+```

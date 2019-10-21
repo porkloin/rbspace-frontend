@@ -1,8 +1,9 @@
 ---
-title: "Debugging Drupal Applications in (Neo)Vim with VDebug"
-date: "2018-08-30T23:00:20.000Z"
-description: "Debugging Drupal Applications in (Neo)Vim with VDebug"
+title: 'Debugging Drupal Applications in (Neo)Vim with VDebug'
+date: '2018-08-30T23:00:20.000Z'
+description: 'Debugging Drupal Applications in (Neo)Vim with VDebug'
 featuredImage: ../../../images/code.png
+published: true
 ---
 
 PHPStorm is great, but I don't think I'm alone in the belief that it's a little bit of a memory hog. For the longest time, I've split my development time between Vim (well, NeoVim, but that's a whole different story) and PHPStorm. Whenever I needed to do heavy debugging work I'd drudge up PHPStorm and fire up the debugger.
@@ -17,7 +18,7 @@ One quick note: this article won't cover initially setting up Xdebug in your Dru
 ##Installing Vdebug
 Note: Installing Vdebug requires having a Vim installation compiled with Python 3 support. On Ubuntu/Debian this can be attained with the vim-nox package.
 
-In my NeoVim installation I use vim-plug to manage my vim plugins. It makes it dead simple to install new plugins. After [installing vim-plug](https://github.com/junegunn/vim-plug#installation), all you need to do is drop 
+In my NeoVim installation I use vim-plug to manage my vim plugins. It makes it dead simple to install new plugins. After [installing vim-plug](https://github.com/junegunn/vim-plug#installation), all you need to do is drop
 
 ```vim
 Plug 'vim-vdebug/vdebug'
@@ -28,7 +29,7 @@ into your ~/.config/nvim/init.vim file (NeoVim) or ~/.vimrc (Vim). Then, next ti
 Huzzah! You've installed Vdebug!
 
 ##Debugging
-First, you can use Vdebug to set breakpoints on the currently selected line in vim using F10. 
+First, you can use Vdebug to set breakpoints on the currently selected line in vim using F10.
 
 Once you've selected your breakpoints, you can start Vdebug by hitting F5. This opens Vdebug and starts listening for connections. Once you've done that, refresh your page with your browser debugger enabled, and you should see your debugger kick into action!
 
@@ -50,8 +51,7 @@ let g:vdebug_options['path_maps'] = {
       \  '/var/www/html' : '/home/myuser/myprojectroot',
     \}
 ```
-Note that you will need to modify the values to match your path mappings! The first path (/var/www/html in this example) is the path to the codebase root inside your docker container - you can easily find this by ssh-ing into your container (lando ssh or ddev ssh or docker exec myappcontainer bin/bash) and location your codebase on the host system. The second value (on the right) is the path to the codebase on your local system.
 
- 
+Note that you will need to modify the values to match your path mappings! The first path (/var/www/html in this example) is the path to the codebase root inside your docker container - you can easily find this by ssh-ing into your container (lando ssh or ddev ssh or docker exec myappcontainer bin/bash) and location your codebase on the host system. The second value (on the right) is the path to the codebase on your local system.
 
 And that's it! Although there are some gotchas that take a little time, really it's a very quick process to get up and running with an Xdebug setup in Vim!

@@ -14,8 +14,8 @@ module.exports = {
       {
         name: 'Guestbook',
         link: '/guestbook',
-      }
-    ]
+      },
+    ],
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -52,12 +52,27 @@ module.exports = {
               muted: false,
               autoplay: false,
               width: '100%',
-            }
+            },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-embed-video',
+            options: {
+              width: 920,
+              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+              noIframeBorder: true, //Optional: Disable insertion of <style> border: 0,
+              urlOverrides: [
+                {
+                  id: 'youtube',
+                  embedURL: videoId =>
+                    `https://www.youtube-nocookie.com/embed/${videoId}`,
+                },
+              ],
             },
           },
           `gatsby-remark-prismjs`,
@@ -66,13 +81,6 @@ module.exports = {
         ],
       },
     },
-    /*{
-      resolve: `gatsby-source-drupal`,
-      options: {
-        baseUrl: `https://live-rbspace-backend.pantheonsite.io/`,
-        apiBase: `jsonapi`, // optional, defaults to `jsonapi`
-      },
-    },*/
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -88,26 +96,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          {
-            resolve: "gatsby-remark-embed-video",
-            options: {
-              width: 920,
-              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
-              noIframeBorder: true, //Optional: Disable insertion of <style> border: 0,
-              urlOverrides: [
-                {
-                  id: 'youtube',
-                  embedURL: (videoId) => `https://www.youtube-nocookie.com/embed/${videoId}`,
-                }
-              ],
-            }
-          }
-        ]
-      }
-    },
   ],
 }

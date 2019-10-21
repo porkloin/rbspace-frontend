@@ -1,8 +1,9 @@
 ---
-title: "Proxying BrowserSync in a Lando Local Dev Environment"
-date: "2018-02-12T23:00:20.000Z"
-description: "Proxying BrowserSync in a Lando Local Dev Environment"
+title: 'Proxying BrowserSync in a Lando Local Dev Environment'
+date: '2018-02-12T23:00:20.000Z'
+description: 'Proxying BrowserSync in a Lando Local Dev Environment'
 featuredImage: ../../../images/code.png
+published: true
 ---
 
 I love Lando – it's one of the easiest to use docker-based local development solutions I've ever tried, and it has an amazing amount of extensibility for front-end tooling. I also love BrowserSync for live reloading and testing sites across various devices. However, Lando didn't have a well-documented way of integrating with BrowserSync.
@@ -21,14 +22,14 @@ services:
   node:
     type: node:6.10
     build:
-      - "cd $LANDO_MOUNT/path/to/your/theme && npm install"
+      - 'cd $LANDO_MOUNT/path/to/your/theme && npm install'
     overrides:
       services:
         ports:
           - 3000:3000
           - 3001:3001
     globals:
-      gulp-cli: "latest"
+      gulp-cli: 'latest'
 tooling:
   npm:
     service: node

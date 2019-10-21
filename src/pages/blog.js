@@ -4,8 +4,11 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import BlogRoll from '../components/BlogRoll'
 
-const Blog = ( {data} ) => (
-  <Layout pageTitle='Blog' pageDescription='The personal blog of Ryan Bateman. Pls read, ventertaining.'>
+const Blog = ({ data }) => (
+  <Layout
+    pageTitle="Blog"
+    pageDescription="The personal blog of Ryan Bateman. Pls read, ventertaining."
+  >
     <h1>Blog</h1>
     <BlogRoll blogs={data.allMarkdownRemark.edges} />
   </Layout>
@@ -14,26 +17,25 @@ const Blog = ( {data} ) => (
 export default Blog
 
 export const query = graphql`
-  query
-    {
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-      ) {
-        edges {
-          node {
-            id
-            excerpt(pruneLength: 160)
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              date(formatString: "MMMM DD, YYYY")
-              featuredImage {
-                childImageSharp {
-                  fluid(maxWidth: 200) {
-                    ...GatsbyImageSharpFluid
-                  }
+  query {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { published: { eq: true } } }
+    ) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 160)
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 200) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -41,9 +43,10 @@ export const query = graphql`
         }
       }
     }
-  `
+  }
+`
 
-  /*export const query = graphql`
+/*export const query = graphql`
   query
     {
       allNodeArticle(limit: 5, sort: { fields: created, order: DESC}) {

@@ -1,8 +1,9 @@
 ---
-title: "Backstop Generator Module: Easy BackstopJS Configuration Generator for Drupal 8"
-date: "2018-06-05T23:00:20.000Z"
-description: "Backstop Generator Module: Easy BackstopJS Configuration Generator for Drupal 8"
+title: 'Backstop Generator Module: Easy BackstopJS Configuration Generator for Drupal 8'
+date: '2018-06-05T23:00:20.000Z'
+description: 'Backstop Generator Module: Easy BackstopJS Configuration Generator for Drupal 8'
 featuredImage: ../../../images/code.png
+published: true
 ---
 
 Visual regression testing is an incredibly helpful tool in any developer's toolbox, making it possible to programmatically check for unexpected CSS changes on a given website.

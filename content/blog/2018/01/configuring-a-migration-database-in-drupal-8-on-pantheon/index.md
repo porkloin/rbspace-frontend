@@ -1,8 +1,9 @@
 ---
-title: "Configuring a Migration Database in Drupal 8 on Pantheon"
-date: "2018-01-31T23:00:20.000Z"
-description: "Configuring a Migration Database in Drupal 8 on Pantheon"
+title: 'Configuring a Migration Database in Drupal 8 on Pantheon'
+date: '2018-01-31T23:00:20.000Z'
+description: 'Configuring a Migration Database in Drupal 8 on Pantheon'
 featuredImage: ../../../images/code.png
+published: true
 ---
 
 If you come from a largely bare-metal or shared hosting server environment (like myself) you might get a little aggravated at times with the hoops you need to jump through on managed environments like Pantheon.
@@ -57,7 +58,7 @@ if (isset($_SERVER['PRESSFLOW_SETTINGS'])) {
 }
 ```
 
-As you can see, the Pressflow settings come in as a JSON object that gets decoded into the $pressflow_settings variable, which then gets iterated over to create our $conf and $databases variables.
+As you can see, the Pressflow settings come in as a JSON object that gets decoded into the $pressflow_settings variable, which then gets iterated over to create our $conf and \$databases variables.
 
 So how do we interject our own database into the mix?
 
@@ -78,7 +79,7 @@ Then drop your given database dump into that newly created table:
 
 `mysql -u pantheon -areallonghash -h dbserver.environmentname.areallonghashagainbutdifferent.drush.in -P 8904 migrate_source < mysourcedb.sql`
 
-*NOTE:* the changes at the end of the line - you must replace "pantheon" with the name of the database you just created!
+_NOTE:_ the changes at the end of the line - you must replace "pantheon" with the name of the database you just created!
 
 Lastly, we'll return to our settings.php file to intercept the pressflow settings and add another database:
 

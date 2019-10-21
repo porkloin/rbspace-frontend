@@ -1,8 +1,9 @@
 ---
-title: "Early Adventures in 3D Printing"
-date: "2018-01-20T23:00:20.000Z"
-description: "Early Adventures in 3D Printing"
+title: 'Early Adventures in 3D Printing'
+date: '2018-01-20T23:00:20.000Z'
+description: 'Early Adventures in 3D Printing'
 featuredImage: ../../../images/exclamation.png
+published: true
 ---
 
 I've wanted a 3D Printer for a really long time. I've had a few friends that have owned them, and I've even designed a few plastic printed parts for my own use (namely, a stiffener piece for my bike's handlebar bag), but having access to a 3D printer isn't the same as owning one yourself.
@@ -12,7 +13,7 @@ I've wanted a 3D Printer for a really long time. I've had a few friends that hav
 About two weeks ago I got a Monoprice Select Mini V2 delivered. I'd gone through a lot of deliberation trying to decide which printer to buy, but the Select Mini stood out for a few reasons:
 
 - reliability: reviews on reddit, youtube, and other places around the internet were all a testament to the build quality of the machine.
-- premium features at a low price: Monoprice manages to get some higher-end features into a relatively affordable (~$220) printer, including a heated bed, wifi-printing functionality, and an extruder that can print ABS, Nylon, and other non-traditional filaments such as semi-flexibles.
+- premium features at a low price: Monoprice manages to get some higher-end features into a relatively affordable (~\$220) printer, including a heated bed, wifi-printing functionality, and an extruder that can print ABS, Nylon, and other non-traditional filaments such as semi-flexibles.
 - big community online: it's not a matter of if, but when this thing is going to break. I'm happy to know that there's a huge community of people online (shoutout to [/r/MPSelectMiniOwners](https://www.reddit.com/r/MPSelectMiniOwners/)!) that has dealt with the same issue before.
 
 ![Alt Text](https://media.giphy.com/media/3o7520vTKB17eC2Y9i/giphy.gif)
