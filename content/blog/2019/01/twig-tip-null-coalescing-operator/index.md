@@ -3,7 +3,7 @@ title: 'Twig Tip: Null Coalescing Operator'
 date: '2019-01-22T23:00:20.000Z'
 description: 'Twig Tip: Null Coalescing Operator'
 featuredImage: ../../../images/code.png
-published: false
+published: true
 ---
 
 Twig folks, be honest: how many times have you written a snippet of Twig code that looks like this?
