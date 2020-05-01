@@ -21,8 +21,8 @@ const IndexPage = ({ data }) => (
     />
     <h2>About Me</h2>
     <p>
-      I am a web developer and internet person currently working with{' '}
-      <a href="http://www.hook42.com">Hook 42.</a> I primarily occupy meatspace
+      I am a software engineer, web developer, and internet person currently working with{' '}
+      <a href="http://www.pantheon.io">Pantheon.</a> I primarily occupy meatspace
       in Fairbanks, Alaska.
     </p>
     <p style={{ marginBottom: '1.45rem' }}>

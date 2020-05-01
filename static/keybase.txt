@@ -1,0 +1,89 @@
+==================================================================
+https://keybase.io/rybateman
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.ryanbateman.space
+  * I am rybateman (https://keybase.io/rybateman) on keybase.
+  * I have a public key with fingerprint F836 C985 F14E E10F 534C  F017 090E 62AA 5E28 EDA5
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012045f7858ad5abf7a3b094eef668de8068075a0608d0e64ff1059b9065cdcd704b0a",
+      "fingerprint": "f836c985f14ee10f534cf017090e62aa5e28eda5",
+      "host": "keybase.io",
+      "key_id": "090e62aa5e28eda5",
+      "kid": "0101b8f44db7b0d81fa21fef132fdeaacddfdc5bd63a8a96f2bc79839d9dcf887c770a",
+      "uid": "9e52f0b445d6391f1a5520d03a179f00",
+      "username": "rybateman"
+    },
+    "merkle_root": {
+      "ctime": 1587594777,
+      "hash_meta": "2ce29af7d0716dae373d2f3ff402d12c070756abbe366df5af66158b4edbdf4e",
+      "seqno": 16018800
+    },
+    "revoke": {
+      "sig_ids": [
+        "7c6663d96cfb2db813b3fa3ae05eb4f2e0fdd42d49d0d29eb4338aa656aa88550f"
+      ]
+    },
+    "service": {
+      "hostname": "www.ryanbateman.space",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1587594780,
+  "expire_in": 157680000,
+  "prev": "7ff417d62ac53ad748827d2ca60abc7697165f9b9e601e243436912cee958955",
+  "seqno": 12,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMQBAnicZZNrTFRHGIYXr2VtFdQUG0gjx7a2Eemcy5yZQ6xA06JBS0LES1HZzJyZ
+ke2yu3jOspRSFPmhYAVNDT+ol2ixFUyjTUTFS2OQaq1ob9GCt8RaK4raQlOtsVE6
+SzVp2vNncibv937vPPPNl88M93jj4sfSXUUv3/kkruvYqjJP0bYTKZUKDbMKJaNS
+CfChhZcw7kZ8AT9TMhSgasCAAmGICYOECkR0CiyDc2GamHEMTAwQJMAEmAFuGkKo
+AFrUAia0mc0QMCggSpoi/KFl3Cl1/KGItBVYN20LQ6FKJxUIqBu2ACoClvTQCIFc
+w5wRKAuLw26sQoajxOXp/rDckz++f+L9X/8kN1ApFobBKKKAYVUQTRVcqLomGCfE
+ZkwwG1Jm6gQTyxQatZGFdYtZzBYYIxuhodxlQ3YWh5oA1DCgLLBUoRIINcCATlRk
+CQBiQpc7IRLkUu3IqBEeJCGlKk0JcidQwn1OOByJ0bUj/phGhRhBy0AIyRMSt9gX
+5BEiSzWbaxYRiAGkmoxwHelME7oQBtCYqtkASdomoZTrpskEJPIapBc1OKNMGFwG
+cfnyUFh2MIGKMQAygsOj4QCPdXf9yyQ4V8lYrCDbNE2dWaYtqMYoVnWqC6ITDiCn
+htA4EIwZGjMsBphmyT1dx4SYsjvBGEIglKVVsW5O1G8Pmcdu6jGB8vLydKeChB5z
+SHdLiR3LVuqEI2E7XCIlxZFIqZsRIxSpKB2q4dT32M1H/SEmB0ZWRLnj+sMheR6p
+/A88DNIU/m6p3+E+f0wBkRxG+cX68Ki0RJKbipicEBvqhCEDYw0xzSYmIPK+TUtC
+hkJOK5ewuGbohm5akjLnFsQWhP+iqcmcZJn0lAhDJFLmcKXqWMeSEZ44r2fUyGGx
+l+Txxic8eV985LjB/GEj2i6VzY+OyspZNHptYWZBd8+wiqm7XllyPOfB9vm8/mK8
+7+m4gqhh3biYdejAI+uvt++l3l/T1HJkcOKjn35OuTA6Vf3s5qvFE6/VnNzTufSQ
+5/LVw7O+m1XYfzQFHDEXNU1ft2VefkHBnI7eDbUJM07UwyntA/ZgXf4a/dMxBx++
+kIEmJSXeXekuzA40tqScXbqyqmtO3uf7jre+0zohPZsErk01t300e6O3s7en67Cn
+Jr87uqJg8m+dd+OLlui/tMG1xfXjSyZFny0qnps60FuYvm7l7K7rc3zdNebJETOc
+ys2L3+zpnVCZsOj6PJB8q/wuqk3et+dDZ0bNrcQt/rmDZw5mN+4eNzlpZh7uvdh3
+M9MZu7UixzvmVvBc3sy05Lb1wRcTBzbuf6vpzviUVV/7+rQ/+1OV3M43BqvBWeu9
+7xe6Sd9s9WZ697R4por7G/74dlVOz0sosK9n0vnL22saVicnP7j8Q2OzzZN+f234
+8tzyK7evfdX3cfQQPdzcn/hj69Xcxp1tN6Y1tC/IOqCuKMu+Wdlyqnz6+x9sOhUc
+VUvHb9pbP7HpVI5eHd4/m58uPPLrc0praO2Nhku3p7SfruYNeXpz3o7F3awv5cKV
+6gaTdgxXkmaen7LzDK+9n7l78/rVOLPu6KOs9uwFO86dEF8s6MhtH3j94d42pf/e
+88l12/qmPdXC6m4nxs37G9gnA7o=
+=bC+7
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rybateman
+
+==================================================================
+
